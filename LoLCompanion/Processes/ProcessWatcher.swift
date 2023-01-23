@@ -12,6 +12,7 @@ class ProcessWatcher: ObservableObject {
     var companionWindowManager = CompanionWindowManager()
 
     init() {
+        print("ProcessWatcher Started")
         watchForWindow()
     }
 
@@ -28,17 +29,20 @@ class ProcessWatcher: ObservableObject {
     }
 
     private func watchForWindow() {
-        let windowsList = CGWindowListCopyWindowInfo([.optionOnScreenAboveWindow], CGWindowID(0)) as? [[String: AnyObject]]
+        let windowsList = CGWindowListCopyWindowInfo([.optionOnScreenOnly], CGWindowID(0)) as? [[String: AnyObject]]
 
-        guard let lolWindow = windowsList?.first(where: { $0[kCGWindowOwnerName as String] as? String ?? "" == "League of Legends" }) else { return }
-        print(windowsList?.firstIndex(where: { $0[kCGWindowOwnerName as String] as? String ?? "" == "League of Legends" }))
-        let windowBounds = lolWindow[kCGWindowBounds as String] as? [String: Int]
-        let windowRect = NSRect(x: windowBounds?["X"] ?? 0, y: windowBounds?["Y"] ?? 0, width: windowBounds?["Width"] ?? 0, height: windowBounds?["Height"] ?? 0)
-        let newCompanionWindowRect = NSRect(origin: CGPoint(x: windowRect.maxX, y: ((windowRect.origin.y * -1) + windowRect.size.height)), size: CGSize(width: 200, height: windowRect.height))
-        
-        DispatchQueue.main.async {
-            self.companionWindowManager.createWindow(with: newCompanionWindowRect)
-            self.companionWindowManager.updateWindow(to: newCompanionWindowRect.origin, height: newCompanionWindowRect.height)
+        if let lolWindow = windowsList?.first(where: { $0[kCGWindowOwnerName as String] as? String ?? "" == "League of Legends" }) {
+            //        print(windowsList?.firstIndex(where: { $0[kCGWindowOwnerName as String] as? String ?? "" == "League of Legends" }))
+            let windowBounds = lolWindow[kCGWindowBounds as String] as? [String: Int]
+            let windowRect = NSRect(x: windowBounds?["X"] ?? 0, y: windowBounds?["Y"] ?? 0, width: windowBounds?["Width"] ?? 0, height: windowBounds?["Height"] ?? 0)
+            let newCompanionWindowRect = NSRect(origin: CGPoint(x: windowRect.maxX, y: ((windowRect.origin.y * -1) + windowRect.size.height)), size: CGSize(width: 200, height: windowRect.height))
+
+            DispatchQueue.main.async {
+                self.companionWindowManager.createWindow(with: newCompanionWindowRect)
+                self.companionWindowManager.updateWindow(to: newCompanionWindowRect.origin, height: newCompanionWindowRect.height)
+            }
+        } else {
+            print("DIDN'T FOUND: League of Legends")
         }
 
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + .milliseconds(100)) {

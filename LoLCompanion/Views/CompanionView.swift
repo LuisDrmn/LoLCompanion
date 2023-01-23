@@ -28,6 +28,7 @@ struct CompanionView: View {
                 lolManager.updateLocalSummoner()
                 await lolManager.updateRemoteSummoner()
                 await lolManager.updateLastMatches()
+                await lolManager.getData()
             }
         }
     }

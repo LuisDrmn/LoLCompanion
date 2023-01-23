@@ -10,12 +10,13 @@ import SwiftUI
 @main
 struct LoLCompanionApp: App {
 //    @StateObject var lolManager = LoLManager()
-    var processWatcher = ProcessWatcher()
+    @StateObject var processWatcher = ProcessWatcher()
 
 
     var body: some Scene {
         MenuBarExtra("LoLCompanionApp", systemImage: "figure.yoga") {
-//            ContentView()
+            ContentView()
+                .environmentObject(processWatcher)
 ////            Divider()
 //            SummonerView(viewModel: SummonerViewViewModel())
 //                .environmentObject(lolManager)

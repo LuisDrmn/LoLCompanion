@@ -35,7 +35,7 @@ class CompanionWindowManager {
     func updateWindow(to origin: CGPoint, height: CGFloat) {
         guard let companionWindow = self.companionWindow else { return }
 
-        print(NSWorkspace.shared.frontmostApplication)
+//        print(NSWorkspace.shared.frontmostApplication)
         if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == LolProcesses.leagueClientUx.bundleIdentifier {
             companionWindow.presentWindow()
         } else {

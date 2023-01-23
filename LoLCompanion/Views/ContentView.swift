@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct ContentViewModel {
-    var processWatcher = ProcessWatcher()
+class ContentViewModel {
     var processData: [LolProcesses: Bool] = [:]
 
-    init() {
+    func update(with processWatcher: ProcessWatcher) {
         for process in LolProcesses.allCases {
             let isRunning = processWatcher.isRunning(process: process)
             processData[process] = isRunning
@@ -20,6 +19,8 @@ struct ContentViewModel {
 }
 
 struct ContentView: View {
+    @EnvironmentObject var processWatcher: ProcessWatcher
+
     var viewModel = ContentViewModel()
 
     var body: some View {
@@ -31,8 +32,10 @@ struct ContentView: View {
 //                    Image(systemName: viewModel.processData[process] ?? false ? "checkmark" : "xmark.circle")
                 }
             }
+        }.task {
+            print("ONAppear")
+            viewModel.update(with: processWatcher)
         }
-        .padding()
     }
 }
 

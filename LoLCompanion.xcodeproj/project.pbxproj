@@ -29,6 +29,8 @@
 		A0704F98297E99EB00E7B187 /* CompanionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F97297E99EB00E7B187 /* CompanionWindow.swift */; };
 		A0704F9B297EAFA700E7B187 /* CGPoint+LoLCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F9A297EAFA700E7B187 /* CGPoint+LoLCompanion.swift */; };
 		A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */; };
+		A0704FA7297F062B00E7B187 /* LoLManager+Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */; };
+		A0704FA9297F063600E7B187 /* LoLManager+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704FA8297F063600E7B187 /* LoLManager+Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		A0704F97297E99EB00E7B187 /* CompanionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionWindow.swift; sourceTree = "<group>"; };
 		A0704F9A297EAFA700E7B187 /* CGPoint+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+LoLCompanion.swift"; sourceTree = "<group>"; };
 		A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LoLCompanion.swift"; sourceTree = "<group>"; };
+		A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Local.swift"; sourceTree = "<group>"; };
+		A0704FA8297F063600E7B187 /* LoLManager+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Network.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,14 +92,14 @@
 		A0280760297C4C1D000C8A01 /* LoLCompanion */ = {
 			isa = PBXGroup;
 			children = (
-				A0704F99297EAF9500E7B187 /* Extensions */,
-				A0704F96297E99CE00E7B187 /* Companion Window */,
 				A0585286297D7672008B9F51 /* Network */,
 				A0280795297CB8EA000C8A01 /* Model */,
 				A0280794297CA704000C8A01 /* Processes */,
 				A0280793297CA6EA000C8A01 /* Managers */,
+				A0704F96297E99CE00E7B187 /* Companion Window */,
 				A0280792297CA6E2000C8A01 /* Views */,
 				A0280761297C4C1D000C8A01 /* LoLCompanionApp.swift */,
+				A0704F99297EAF9500E7B187 /* Extensions */,
 				A0280765297C4C1E000C8A01 /* Assets.xcassets */,
 				A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */,
 				A0280767297C4C1E000C8A01 /* Preview Content */,
@@ -126,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				A028078E297C81AD000C8A01 /* LoLManager.swift */,
+				A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */,
+				A0704FA8297F063600E7B187 /* LoLManager+Network.swift */,
 				A0280770297C4F1F000C8A01 /* CompanionWindowManager.swift */,
 			);
 			path = Managers;
@@ -259,8 +265,10 @@
 			files = (
 				A0585291297D7717008B9F51 /* RiotEndpoint.swift in Sources */,
 				A0280779297C5462000C8A01 /* ProcessWatcher.swift in Sources */,
+				A0704FA7297F062B00E7B187 /* LoLManager+Local.swift in Sources */,
 				A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */,
 				A0585293297D783D008B9F51 /* Summoner.swift in Sources */,
+				A0704FA9297F063600E7B187 /* LoLManager+Network.swift in Sources */,
 				A058529F297DB007008B9F51 /* MatchInfo.swift in Sources */,
 				A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */,
 				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
