@@ -7,33 +7,57 @@
 
 import SwiftUI
 
+class SummonerViewViewModel: ObservableObject {
+}
+
 struct SummonerView: View {
-    var summoner: Summoner?
+    @EnvironmentObject var lolManager: LoLManager
+    @ObservedObject var viewModel: SummonerViewViewModel = SummonerViewViewModel()
 
     var body: some View {
         VStack {
-            Text("ID: \(summoner?.id ?? "Not Found")")
-            Text("Account ID: \(summoner?.accountId ?? "Not Found")")
-            Text("PUUID: \(summoner?.puuid ?? "Not Found")")
-            Text("Name: \(summoner?.name ?? "Not Found")")
+            Text("User Local Data")
+            if let localSummoner = lolManager.localSummoner {
+                comonUserDateView(for: localSummoner)
+            }
+            Divider()
+            Text("User Remote Data")
+            if let remoteSummoner = lolManager.remoteSummoner {
+                comonUserDateView(for: remoteSummoner)
+
+                if let profileIconId = remoteSummoner.profileIconID,
+                   let revisionDate = remoteSummoner.revisionDate,
+                    let summonerLevel = remoteSummoner.summonerLevel {
+                    Text("Profile Icon ID: \(profileIconId)")
+                    Text("Revision Date: \(revisionDate)")
+                    Text("Summoner Level: \(summonerLevel)")
+                }
+            }
+
+            Button("Force Update User Data") {
+                Task {
+                    await lolManager.updateRemoteSummoner()
+                }
+            }
+        }
+    }
+
+    func comonUserDateView(for summoner: Summoner) -> some View {
+        VStack {
+            Text("ID: \(summoner.id)")
+            Text("Account ID: \(summoner.accountID)")
+            Text("PUUID: \(summoner.puuid)")
+                .onTapGesture {
+                    print(summoner.puuid)
+                    NSPasteboard.general.setString(summoner.puuid, forType: .string)
+                }
+            Text("Name: \(summoner.name)")
         }
     }
 }
 
 struct SummonerView_Previews: PreviewProvider {
     static var previews: some View {
-        SummonerView(summoner: Summoner(id: "afeoaebfoba", puuid: "fnoeafbpabefpze", accountId: "fnapenfgpafpe", name: "McBallz"))
+        SummonerView()
     }
 }
-
-
-//struct SummonerRow: View {
-//    var rowPrefix: String
-//    var data: String?
-//
-//    var body: some View {
-//        HStack{
-//            Text("\(rowPrefix): \(data ?? "Not Found")")
-//        }
-//    }
-//}

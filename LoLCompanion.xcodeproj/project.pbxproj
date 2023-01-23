@@ -12,10 +12,23 @@
 		A0280766297C4C1E000C8A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0280765297C4C1E000C8A01 /* Assets.xcassets */; };
 		A0280769297C4C1E000C8A01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0280768297C4C1E000C8A01 /* Preview Assets.xcassets */; };
 		A0280771297C4F1F000C8A01 /* CompanionWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280770297C4F1F000C8A01 /* CompanionWindowManager.swift */; };
-		A0280779297C5462000C8A01 /* WindowWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280778297C5462000C8A01 /* WindowWatcher.swift */; };
+		A0280779297C5462000C8A01 /* ProcessWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280778297C5462000C8A01 /* ProcessWatcher.swift */; };
 		A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028077A297C586A000C8A01 /* LoLProcesses.swift */; };
 		A028078F297C81AD000C8A01 /* LoLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028078E297C81AD000C8A01 /* LoLManager.swift */; };
 		A0280791297CA61A000C8A01 /* SummonerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280790297CA61A000C8A01 /* SummonerView.swift */; };
+		A0585288297D768B008B9F51 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585287297D768B008B9F51 /* Endpoint.swift */; };
+		A058528A297D76A3008B9F51 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585289297D76A3008B9F51 /* RequestMethod.swift */; };
+		A058528C297D76B8008B9F51 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058528B297D76B8008B9F51 /* RequestError.swift */; };
+		A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058528D297D76CD008B9F51 /* HTTPClient.swift */; };
+		A0585291297D7717008B9F51 /* RiotEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585290297D7717008B9F51 /* RiotEndpoint.swift */; };
+		A0585293297D783D008B9F51 /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585292297D783D008B9F51 /* Summoner.swift */; };
+		A0585295297D78C0008B9F51 /* RiotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585294297D78C0008B9F51 /* RiotService.swift */; };
+		A0585297297DA3F1008B9F51 /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585296297DA3F1008B9F51 /* CompanionView.swift */; };
+		A058529F297DB007008B9F51 /* MatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058529E297DB007008B9F51 /* MatchInfo.swift */; };
+		A05852A1297DB054008B9F51 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05852A0297DB054008B9F51 /* MatchView.swift */; };
+		A0704F98297E99EB00E7B187 /* CompanionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F97297E99EB00E7B187 /* CompanionWindow.swift */; };
+		A0704F9B297EAFA700E7B187 /* CGPoint+LoLCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F9A297EAFA700E7B187 /* CGPoint+LoLCompanion.swift */; };
+		A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +39,23 @@
 		A0280768297C4C1E000C8A01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoLCompanion.entitlements; sourceTree = "<group>"; };
 		A0280770297C4F1F000C8A01 /* CompanionWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionWindowManager.swift; sourceTree = "<group>"; };
-		A0280778297C5462000C8A01 /* WindowWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowWatcher.swift; sourceTree = "<group>"; };
+		A0280778297C5462000C8A01 /* ProcessWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessWatcher.swift; sourceTree = "<group>"; };
 		A028077A297C586A000C8A01 /* LoLProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLProcesses.swift; sourceTree = "<group>"; };
 		A028078E297C81AD000C8A01 /* LoLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLManager.swift; sourceTree = "<group>"; };
 		A0280790297CA61A000C8A01 /* SummonerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerView.swift; sourceTree = "<group>"; };
+		A0585287297D768B008B9F51 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A0585289297D76A3008B9F51 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		A058528B297D76B8008B9F51 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		A058528D297D76CD008B9F51 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		A0585290297D7717008B9F51 /* RiotEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotEndpoint.swift; sourceTree = "<group>"; };
+		A0585292297D783D008B9F51 /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
+		A0585294297D78C0008B9F51 /* RiotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotService.swift; sourceTree = "<group>"; };
+		A0585296297DA3F1008B9F51 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
+		A058529E297DB007008B9F51 /* MatchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfo.swift; sourceTree = "<group>"; };
+		A05852A0297DB054008B9F51 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		A0704F97297E99EB00E7B187 /* CompanionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionWindow.swift; sourceTree = "<group>"; };
+		A0704F9A297EAFA700E7B187 /* CGPoint+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+LoLCompanion.swift"; sourceTree = "<group>"; };
+		A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LoLCompanion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +88,9 @@
 		A0280760297C4C1D000C8A01 /* LoLCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				A0704F99297EAF9500E7B187 /* Extensions */,
+				A0704F96297E99CE00E7B187 /* Companion Window */,
+				A0585286297D7672008B9F51 /* Network */,
 				A0280795297CB8EA000C8A01 /* Model */,
 				A0280794297CA704000C8A01 /* Processes */,
 				A0280793297CA6EA000C8A01 /* Managers */,
@@ -87,6 +116,8 @@
 			children = (
 				A0280763297C4C1D000C8A01 /* ContentView.swift */,
 				A0280790297CA61A000C8A01 /* SummonerView.swift */,
+				A0585296297DA3F1008B9F51 /* CompanionView.swift */,
+				A05852A0297DB054008B9F51 /* MatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,7 +134,7 @@
 		A0280794297CA704000C8A01 /* Processes */ = {
 			isa = PBXGroup;
 			children = (
-				A0280778297C5462000C8A01 /* WindowWatcher.swift */,
+				A0280778297C5462000C8A01 /* ProcessWatcher.swift */,
 			);
 			path = Processes;
 			sourceTree = "<group>";
@@ -112,8 +143,48 @@
 			isa = PBXGroup;
 			children = (
 				A028077A297C586A000C8A01 /* LoLProcesses.swift */,
+				A0585292297D783D008B9F51 /* Summoner.swift */,
+				A058529E297DB007008B9F51 /* MatchInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A0585286297D7672008B9F51 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A058528F297D76ED008B9F51 /* Base */,
+				A0585290297D7717008B9F51 /* RiotEndpoint.swift */,
+				A0585294297D78C0008B9F51 /* RiotService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A058528F297D76ED008B9F51 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A0585287297D768B008B9F51 /* Endpoint.swift */,
+				A0585289297D76A3008B9F51 /* RequestMethod.swift */,
+				A058528B297D76B8008B9F51 /* RequestError.swift */,
+				A058528D297D76CD008B9F51 /* HTTPClient.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A0704F96297E99CE00E7B187 /* Companion Window */ = {
+			isa = PBXGroup;
+			children = (
+				A0704F97297E99EB00E7B187 /* CompanionWindow.swift */,
+			);
+			path = "Companion Window";
+			sourceTree = "<group>";
+		};
+		A0704F99297EAF9500E7B187 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0704F9A297EAFA700E7B187 /* CGPoint+LoLCompanion.swift */,
+				A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,12 +257,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0280779297C5462000C8A01 /* WindowWatcher.swift in Sources */,
+				A0585291297D7717008B9F51 /* RiotEndpoint.swift in Sources */,
+				A0280779297C5462000C8A01 /* ProcessWatcher.swift in Sources */,
+				A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */,
+				A0585293297D783D008B9F51 /* Summoner.swift in Sources */,
+				A058529F297DB007008B9F51 /* MatchInfo.swift in Sources */,
 				A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */,
+				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
+				A0585288297D768B008B9F51 /* Endpoint.swift in Sources */,
 				A0280764297C4C1D000C8A01 /* ContentView.swift in Sources */,
+				A0585297297DA3F1008B9F51 /* CompanionView.swift in Sources */,
+				A0585295297D78C0008B9F51 /* RiotService.swift in Sources */,
+				A05852A1297DB054008B9F51 /* MatchView.swift in Sources */,
 				A0280762297C4C1D000C8A01 /* LoLCompanionApp.swift in Sources */,
 				A0280771297C4F1F000C8A01 /* CompanionWindowManager.swift in Sources */,
+				A058528C297D76B8008B9F51 /* RequestError.swift in Sources */,
+				A0704F98297E99EB00E7B187 /* CompanionWindow.swift in Sources */,
 				A028078F297C81AD000C8A01 /* LoLManager.swift in Sources */,
+				A058528A297D76A3008B9F51 /* RequestMethod.swift in Sources */,
+				A0704F9B297EAFA700E7B187 /* CGPoint+LoLCompanion.swift in Sources */,
 				A0280791297CA61A000C8A01 /* SummonerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +410,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,6 +438,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

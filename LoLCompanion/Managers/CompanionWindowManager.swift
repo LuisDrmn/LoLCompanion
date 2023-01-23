@@ -7,23 +7,24 @@
 
 import Foundation
 import AppKit
+import SwiftUI
 
 class CompanionWindowManager {
     var companionWindow: CustomWindow?
 
     init() {
-        print("CompanionWindowManager INIT")
+        print("CompanionWindowManager Init")
     }
 
     deinit {
         print("CompanionWindowManager DE-INIT")
     }
 
-    func createWindow(with height: CGFloat) {
+    func createWindow(with rect: NSRect) {
         guard companionWindow == nil else { return }
         print("FOUND LEAGUE OF LEGENDS WINDOW")
         print("CREATED COMPANION WINDOW")
-        self.companionWindow = CustomWindow(with: height)
+        self.companionWindow = CustomWindow(with: rect)
     }
 
     func closeWindow() {
@@ -32,31 +33,19 @@ class CompanionWindowManager {
     }
 
     func updateWindow(to origin: CGPoint, height: CGFloat) {
-        if self.companionWindow?.frame.origin == origin && self.companionWindow?.frame.height == height {
+        guard let companionWindow = self.companionWindow else { return }
+
+        print(NSWorkspace.shared.frontmostApplication)
+        if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == LolProcesses.leagueClientUx.bundleIdentifier {
+            companionWindow.presentWindow()
+        } else {
+            companionWindow.hideWindow()
             return
         }
-        self.companionWindow?.setFrame(NSRect(x: origin.x, y: origin.y, width: self.companionWindow?.frame.width ?? 0, height: height), display: true, animate: true)
 
-        if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == LolProcesses.leagueClientUx.bundleIdentifier {
-            self.companionWindow?.orderFront(nil)
-        } else {
-            self.companionWindow?.orderBack(nil)
-        }
-    }
+        let newFrame = NSRect(x: origin.x, y: origin.y, width: companionWindow.frame.width, height: height)
+        companionWindow.move(to: newFrame, duration: 0.3)
 
-    func moveWindow(to origin: CGPoint) {
-        self.companionWindow?.setFrameOrigin(origin)
     }
 }
 
-class CustomWindow: NSWindow {
-    init(with height: CGFloat) {
-        super.init(contentRect: NSRect(origin: .zero, size: CGSize(width: 200, height: height)), styleMask: [], backing: .buffered, defer: false)
-        self.isReleasedWhenClosed = false
-        self.orderBack(nil)
-    }
-
-    deinit {
-        print("CustomWindow DE-INIT")
-    }
-}

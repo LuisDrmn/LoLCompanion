@@ -28,7 +28,7 @@ struct ContentView: View {
                 HStack {
                     Text(process.name)
                         .foregroundColor(viewModel.processData[process] ?? false ? .green : .red)
-                    Image(systemName: viewModel.processData[process] ?? false ? "checkmark" : "xmark.circle")
+//                    Image(systemName: viewModel.processData[process] ?? false ? "checkmark" : "xmark.circle")
                 }
             }
         }

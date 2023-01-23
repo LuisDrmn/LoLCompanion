@@ -9,19 +9,17 @@ import SwiftUI
 
 @main
 struct LoLCompanionApp: App {
-    @StateObject var lolManager = LoLManager()
+//    @StateObject var lolManager = LoLManager()
+    var processWatcher = ProcessWatcher()
 
-    @State var summoner: Summoner? = nil
 
     var body: some Scene {
         MenuBarExtra("LoLCompanionApp", systemImage: "figure.yoga") {
-            ContentView()
-            Divider()
-            SummonerView(summoner: lolManager.findUsername())
-            Button("Force update of local data") {
-                self.summoner = lolManager.findUsername()
-            }
-            Divider()
+//            ContentView()
+////            Divider()
+//            SummonerView(viewModel: SummonerViewViewModel())
+//                .environmentObject(lolManager)
+//            Divider()
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }.keyboardShortcut("q")
