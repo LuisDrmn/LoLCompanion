@@ -48,12 +48,17 @@ struct SummonerView: View {
 
     var body: some View {
         HStack {
-            Image("test")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 61, height: 61, alignment: .center)
-                .cornerRadius(100)
-                .padding(.trailing, 16)
+            AsyncImage(url: DDragonManager.shared.getProfileURL(for: viewModel.remoteSummoner?.profileIconID ?? 1,
+                                                                patchVersions: DDragonManager.shared.lastVersion ?? "")) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 61, height: 61, alignment: .center)
+                    .cornerRadius(100)
+                    .padding(.trailing, 16)
+            } placeholder: {
+                ProgressView()
+            }
             VStack(alignment: .leading) {
                 Text(viewModel.remoteSummoner?.name ?? "Not Defined")
                     .font(Font.system(size: 16))

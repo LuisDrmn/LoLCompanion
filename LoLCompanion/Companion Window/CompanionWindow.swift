@@ -14,7 +14,7 @@ class CustomWindow: NSWindow {
     init(with rect: NSRect) {
         super.init(contentRect: rect, styleMask: [], backing: .buffered, defer: false)
         isReleasedWhenClosed = false
-        level = .floating
+//        level = .floating
         self.hideWindow()
 
         let mainView = CompanionView()

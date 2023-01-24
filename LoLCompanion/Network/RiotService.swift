@@ -8,6 +8,7 @@
 import Foundation
 
 typealias MatchesID = [String]
+
 protocol RiotServiceable {
     func getSummonerName(_ summonerName: String) async -> Result<Summoner, RequestError>
     func getMatches(for summonerPuuid: String) async -> Result<MatchesID, RequestError>

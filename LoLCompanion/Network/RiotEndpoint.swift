@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 enum RiotEndpoint {
     static let API_KEY = "RGAPI-ef0ba744-d5e1-4c0f-a607-1c9155abdf9d"
 

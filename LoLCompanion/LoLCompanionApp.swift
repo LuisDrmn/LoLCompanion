@@ -9,15 +9,14 @@ import SwiftUI
 
 @main
 struct LoLCompanionApp: App {
-//    @StateObject var lolManager = LoLManager()
     @StateObject var processWatcher = ProcessWatcher()
-
-
+    @StateObject var dDragonmanager = DDragonManager()
+    
     var body: some Scene {
         Settings {
             SettingsView()
         }
-        MenuBarExtra("LoLCompanionApp", systemImage: "figure.yoga") {
+        MenuBarExtra("LoLCompanionApp", image: "toolbarIcon") {
             ProcessesView()
                 .environmentObject(processWatcher)
             Divider()

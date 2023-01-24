@@ -12,12 +12,18 @@ struct MatchView: View {
 
     var body: some View {
         HStack {
-            Image("test")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40, height: 40, alignment: .center)
-                .cornerRadius(100)
-                .padding(.trailing, 16)
+
+            AsyncImage(url: DDragonManager.shared.getChampionURL(for: gameResume.championName,
+                                                                 patchVersions: DDragonManager.shared.lastVersion ?? "")) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .cornerRadius(100)
+                    .padding(.trailing, 16)
+            } placeholder: {
+                ProgressView()
+            }
             VStack(alignment: .leading) {
                 Text(gameResume.win ? "VICTORY" : "DEFEAT")
                     .foregroundColor(gameResume.win ? LoLCompanionColors.victory.swiftUI : LoLCompanionColors.defeat.swiftUI)
