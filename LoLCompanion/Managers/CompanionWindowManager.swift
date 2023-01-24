@@ -22,7 +22,6 @@ class CompanionWindowManager {
 
     func createWindow(with rect: NSRect) {
         guard companionWindow == nil else { return }
-        print("FOUND LEAGUE OF LEGENDS WINDOW")
         print("CREATED COMPANION WINDOW")
         self.companionWindow = CustomWindow(with: rect)
     }
@@ -35,7 +34,6 @@ class CompanionWindowManager {
     func updateWindow(to origin: CGPoint, height: CGFloat) {
         guard let companionWindow = self.companionWindow else { return }
 
-//        print(NSWorkspace.shared.frontmostApplication)
         if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == LolProcesses.leagueClientUx.bundleIdentifier {
             companionWindow.presentWindow()
         } else {

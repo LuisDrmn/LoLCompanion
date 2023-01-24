@@ -8,33 +8,21 @@
 import SwiftUI
 
 class ContentViewModel {
-    var processData: [LolProcesses: Bool] = [:]
 
-    func update(with processWatcher: ProcessWatcher) {
-        for process in LolProcesses.allCases {
-            let isRunning = processWatcher.isRunning(process: process)
-            processData[process] = isRunning
-        }
-    }
 }
 
 struct ContentView: View {
     @EnvironmentObject var processWatcher: ProcessWatcher
-
-    var viewModel = ContentViewModel()
 
     var body: some View {
         VStack {
             ForEach(LolProcesses.allCases, id: \.id) { process in
                 HStack {
                     Text(process.name)
-                        .foregroundColor(viewModel.processData[process] ?? false ? .green : .red)
+                        .foregroundColor(processWatcher.lolProcesses[process] ?? false ? .green : .red)
 //                    Image(systemName: viewModel.processData[process] ?? false ? "checkmark" : "xmark.circle")
                 }
             }
-        }.task {
-            print("ONAppear")
-            viewModel.update(with: processWatcher)
         }
     }
 }
