@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-class ContentViewModel {
-
-}
-
-struct ContentView: View {
+struct ProcessesView: View {
     @EnvironmentObject var processWatcher: ProcessWatcher
 
     var body: some View {
         VStack {
+            Text("Processes:")
             ForEach(LolProcesses.allCases, id: \.id) { process in
                 HStack {
                     Text(process.name)
@@ -27,9 +24,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ProcessesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProcessesView()
     }
 }
 
