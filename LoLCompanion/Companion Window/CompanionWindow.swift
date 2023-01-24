@@ -12,7 +12,7 @@ import SwiftUI
 class CustomWindow: NSWindow {
 
     init(with rect: NSRect) {
-        super.init(contentRect: rect, styleMask: [.titled, .fullSizeContentView], backing: .buffered, defer: false)
+        super.init(contentRect: rect, styleMask: [], backing: .buffered, defer: false)
         isReleasedWhenClosed = false
         level = .floating
         self.hideWindow()
@@ -22,7 +22,18 @@ class CustomWindow: NSWindow {
 
         let hostingView = LoLCompanionHostingView(rootView: mainView)
         hostingView.frame = NSRect(origin: .zero, size: rect.size)
+        hostingView.layer?.cornerRadius = 8
+        hostingView.layer?.cornerCurve = .continuous
+        hostingView.layer?.masksToBounds = true
         hostingView.translatesAutoresizingMaskIntoConstraints = false
+
+        let visualEffect = NSVisualEffectView()
+        visualEffect.blendingMode = .behindWindow
+        visualEffect.state = .active
+        visualEffect.material = .hudWindow
+        contentView = visualEffect
+        
+        self.isMovableByWindowBackground = false
 
         self.contentView?.addSubview(hostingView)
     }
@@ -62,7 +73,7 @@ extension CustomWindow {
 }
 
 class LoLCompanionHostingView<Content>: NSHostingView<Content> where Content: View {
-//    public override var allowsVibrancy: Bool { false }
+    public override var allowsVibrancy: Bool { false }
 
     required public init(rootView: Content) {
         super.init(rootView: rootView)

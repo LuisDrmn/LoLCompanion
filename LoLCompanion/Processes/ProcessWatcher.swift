@@ -31,6 +31,7 @@ class ProcessWatcher: ObservableObject {
                     if let app = lolProcesses[process], app == appIsRunning {
                         continue
                     }
+                    print("\(process) is \(appIsRunning ? "Running" : "Not Running")")
                     DispatchQueue.main.async {
                         self.lolProcesses[process] = appIsRunning
                     }

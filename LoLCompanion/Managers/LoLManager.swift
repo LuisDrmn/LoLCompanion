@@ -7,26 +7,34 @@
 
 import Foundation
 
+struct GameResume: Identifiable {
+    var id: Int
+    var championName: String
+    var win: Bool
+}
+
 class LoLManager: ObservableObject {
     var riotService = RiotService()
 
     @Published var localSummoner: Summoner?
     @Published var remoteSummoner: Summoner?
+    
     @Published var matches: MatchesID = []
-    @Published var matchesInfo: [MatchInfo] = []
+    var matchesInfo: [MatchInfo] = []
+    @Published var lastGames: [GameResume] = []
 
     init() {}
 
     func getData() async {
         guard !matches.isEmpty else { return }
+        self.lastGames = []
         for match in matches {
             if let data = await fetchMatchInfo(match) {
                 for participant in data.info.participants {
-                    print(participant.puuid)
-                    print(participant.championName)
-                    print(participant.summonerName)
-                    print(participant.win)
-                    print(participant.puuid)
+                    guard participant.summonerName == remoteSummoner?.name else {
+                        continue
+                    }
+                    lastGames.append(GameResume(id: data.info.gameID, championName: participant.championName, win: participant.win))
                 }
             }
         }

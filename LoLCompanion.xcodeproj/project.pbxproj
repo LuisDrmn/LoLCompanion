@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0280762297C4C1D000C8A01 /* LoLCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280761297C4C1D000C8A01 /* LoLCompanionApp.swift */; };
-		A0280764297C4C1D000C8A01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280763297C4C1D000C8A01 /* ContentView.swift */; };
+		A0280764297C4C1D000C8A01 /* ProcessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280763297C4C1D000C8A01 /* ProcessesView.swift */; };
 		A0280766297C4C1E000C8A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0280765297C4C1E000C8A01 /* Assets.xcassets */; };
 		A0280769297C4C1E000C8A01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0280768297C4C1E000C8A01 /* Preview Assets.xcassets */; };
 		A0280771297C4F1F000C8A01 /* CompanionWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280770297C4F1F000C8A01 /* CompanionWindowManager.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		A028075E297C4C1D000C8A01 /* LoLCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0280761297C4C1D000C8A01 /* LoLCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLCompanionApp.swift; sourceTree = "<group>"; };
-		A0280763297C4C1D000C8A01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0280763297C4C1D000C8A01 /* ProcessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessesView.swift; sourceTree = "<group>"; };
 		A0280765297C4C1E000C8A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0280768297C4C1E000C8A01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoLCompanion.entitlements; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 		A0280792297CA6E2000C8A01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A0280763297C4C1D000C8A01 /* ContentView.swift */,
-				A0280790297CA61A000C8A01 /* SummonerView.swift */,
+				A0280763297C4C1D000C8A01 /* ProcessesView.swift */,
 				A0585296297DA3F1008B9F51 /* CompanionView.swift */,
+				A0280790297CA61A000C8A01 /* SummonerView.swift */,
 				A05852A0297DB054008B9F51 /* MatchView.swift */,
 			);
 			path = Views;
@@ -273,7 +273,7 @@
 				A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */,
 				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
 				A0585288297D768B008B9F51 /* Endpoint.swift in Sources */,
-				A0280764297C4C1D000C8A01 /* ContentView.swift in Sources */,
+				A0280764297C4C1D000C8A01 /* ProcessesView.swift in Sources */,
 				A0585297297DA3F1008B9F51 /* CompanionView.swift in Sources */,
 				A0585295297D78C0008B9F51 /* RiotService.swift in Sources */,
 				A05852A1297DB054008B9F51 /* MatchView.swift in Sources */,

@@ -6,23 +6,55 @@
 //
 
 import SwiftUI
+import Combine
 
 class SummonerViewViewModel: ObservableObject {
+    private var lolManager: LoLManager
+    private var scope = Set<AnyCancellable>()
+
+    @Published var localSummoner: Summoner?
+    @Published var remoteSummoner: Summoner?
+
+    init(lolManager: LoLManager) {
+        self.lolManager = lolManager
+        observeData()
+    }
+
+    private func observeData() {
+        lolManager.$localSummoner
+            .receive(on: RunLoop.main)
+            .sink { localSummoner in
+                self.localSummoner = localSummoner
+            }.store(in: &scope)
+
+        lolManager.$remoteSummoner
+            .receive(on: RunLoop.main)
+            .sink { remoteSummoner in
+                self.remoteSummoner = remoteSummoner
+            }.store(in: &scope)
+    }
+
+    func updateData() {
+        Task {
+            lolManager.updateLocalSummoner()
+            await lolManager.updateRemoteSummoner()
+        }
+    }
+
 }
 
 struct SummonerView: View {
-    @EnvironmentObject var lolManager: LoLManager
-    @ObservedObject var viewModel: SummonerViewViewModel = SummonerViewViewModel()
+    @ObservedObject var viewModel: SummonerViewViewModel
 
     var body: some View {
         VStack {
             Text("User Local Data")
-            if let localSummoner = lolManager.localSummoner {
+            if let localSummoner = viewModel.localSummoner {
                 comonUserDateView(for: localSummoner)
             }
             Divider()
             Text("User Remote Data")
-            if let remoteSummoner = lolManager.remoteSummoner {
+            if let remoteSummoner = viewModel.remoteSummoner {
                 comonUserDateView(for: remoteSummoner)
 
                 if let profileIconId = remoteSummoner.profileIconID,
@@ -33,17 +65,13 @@ struct SummonerView: View {
                     Text("Summoner Level: \(summonerLevel)")
                 }
             }
-
-            Button("Force Update User Data") {
-                Task {
-                    await lolManager.updateRemoteSummoner()
-                }
-            }
+        }.task {
+            viewModel.updateData()
         }
     }
 
     func comonUserDateView(for summoner: Summoner) -> some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("ID: \(summoner.id)")
             Text("Account ID: \(summoner.accountID)")
             Text("PUUID: \(summoner.puuid)")
@@ -58,6 +86,6 @@ struct SummonerView: View {
 
 struct SummonerView_Previews: PreviewProvider {
     static var previews: some View {
-        SummonerView()
+        SummonerView(viewModel: SummonerViewViewModel(lolManager: LoLManager()))
     }
 }

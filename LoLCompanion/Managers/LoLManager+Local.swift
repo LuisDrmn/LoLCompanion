@@ -54,6 +54,8 @@ extension LoLManager {
                     let nameRange = match.range(at: 4)
                     let nameValue = String(content[Range(nameRange, in: content)!])
                     localSummoner = Summoner(id: idValue, accountID: accountIdValue, puuid: puuidValue, name: nameValue, profileIconID: nil, revisionDate: nil, summonerLevel: nil)
+                } else {
+                    print("No Match")
                 }
             }
         } catch {

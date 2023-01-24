@@ -8,15 +8,10 @@
 import Foundation
 
 protocol HTTPClient {
-    var urlCache: URLCache { get }
     func sendRequest<T: Codable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError>
 }
 
 extension HTTPClient {
-    var urlCache: URLCache {
-        URLCache.shared
-    }
-
     func makeNetworkRequest(with endpoint: Endpoint) -> Result<URLRequest, RequestError> {
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
@@ -59,19 +54,10 @@ extension HTTPClient {
             var data: Data?
             var response: URLResponse?
 
-            if let cachedResponse = urlCache.cachedResponse(for: request) {
-                print("Using cached response for request: \(request)")
-                data = cachedResponse.data
-                response = cachedResponse.response
-            } else {
-                let (urlSessionData, urlSessionResponse) = try await URLSession.shared.data(for: request)
+            let (urlSessionData, urlSessionResponse) = try await URLSession.shared.data(for: request)
 //                print("JSON String: \(String(data: urlSessionData, encoding: .utf8))")
-                data = urlSessionData
-                response = urlSessionResponse
-
-                let cachedResponse = CachedURLResponse(response: urlSessionResponse, data: urlSessionData)
-                urlCache.storeCachedResponse(cachedResponse, for: request)
-            }
+            data = urlSessionData
+            response = urlSessionResponse
 
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)

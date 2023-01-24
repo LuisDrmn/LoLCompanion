@@ -10,7 +10,7 @@ import Foundation
 
 
 enum RiotEndpoint {
-    static let API_KEY = "RGAPI-d35ae846-96ab-4684-88ee-3a75a66081fb"
+    static let API_KEY = "RGAPI-ef0ba744-d5e1-4c0f-a607-1c9155abdf9d"
     case getSummonerName(_ summonerName: String)
     case getMatches(puuId: String)
     case getMatchInfo(matchId: String)
