@@ -31,6 +31,8 @@
 		A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */; };
 		A0704FA7297F062B00E7B187 /* LoLManager+Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */; };
 		A0704FA9297F063600E7B187 /* LoLManager+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0704FA8297F063600E7B187 /* LoLManager+Network.swift */; };
+		A08C4FDD2980302E0057C79A /* LoLCompanionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */; };
+		A08C4FE229803D2D0057C79A /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE129803D2D0057C79A /* CustomDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LoLCompanion.swift"; sourceTree = "<group>"; };
 		A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Local.swift"; sourceTree = "<group>"; };
 		A0704FA8297F063600E7B187 /* LoLManager+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Network.swift"; sourceTree = "<group>"; };
+		A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLCompanionColors.swift; sourceTree = "<group>"; };
+		A08C4FE129803D2D0057C79A /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				A0280765297C4C1E000C8A01 /* Assets.xcassets */,
 				A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */,
 				A0280767297C4C1E000C8A01 /* Preview Content */,
+				A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */,
 			);
 			path = LoLCompanion;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 		A0280792297CA6E2000C8A01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A08C4FDE29803D110057C79A /* Components */,
 				A0280763297C4C1D000C8A01 /* ProcessesView.swift */,
 				A0585296297DA3F1008B9F51 /* CompanionView.swift */,
 				A0280790297CA61A000C8A01 /* SummonerView.swift */,
@@ -191,6 +197,14 @@
 				A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A08C4FDE29803D110057C79A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A08C4FE129803D2D0057C79A /* CustomDivider.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,7 @@
 				A0704FA9297F063600E7B187 /* LoLManager+Network.swift in Sources */,
 				A058529F297DB007008B9F51 /* MatchInfo.swift in Sources */,
 				A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */,
+				A08C4FE229803D2D0057C79A /* CustomDivider.swift in Sources */,
 				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
 				A0585288297D768B008B9F51 /* Endpoint.swift in Sources */,
 				A0280764297C4C1D000C8A01 /* ProcessesView.swift in Sources */,
@@ -282,6 +297,7 @@
 				A058528C297D76B8008B9F51 /* RequestError.swift in Sources */,
 				A0704F98297E99EB00E7B187 /* CompanionWindow.swift in Sources */,
 				A028078F297C81AD000C8A01 /* LoLManager.swift in Sources */,
+				A08C4FDD2980302E0057C79A /* LoLCompanionColors.swift in Sources */,
 				A058528A297D76A3008B9F51 /* RequestMethod.swift in Sources */,
 				A0704F9B297EAFA700E7B187 /* CGPoint+LoLCompanion.swift in Sources */,
 				A0280791297CA61A000C8A01 /* SummonerView.swift in Sources */,

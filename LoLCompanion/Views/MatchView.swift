@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct MatchView: View {
+    var gameResume: GameResume
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image("test")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40, height: 40, alignment: .center)
+                .cornerRadius(100)
+                .padding(.trailing, 16)
+            VStack(alignment: .leading) {
+                Text(gameResume.win ? "VICTORY" : "DEFEAT")
+                    .foregroundColor(gameResume.win ? LoLCompanionColors.victory.swiftUI : LoLCompanionColors.defeat.swiftUI)
+                    .font(Font.system(size: 16))
+                    .fontWeight(.bold)
+                Text("Ranked Flex")
+                    .font(Font.system(size: 14))
+                    .fontWeight(.regular)
+            }
+            Spacer()
+        }
+        .padding(16)
+        .frame(width: 200, height: 40, alignment: .center)
     }
 }
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView()
+        VStack {
+            MatchView(gameResume: GameResume(id: 8, championName: "Shaco", win: true))
+            MatchView(gameResume: GameResume(id: 4, championName: "Shaco", win: false))
+        }
     }
 }

@@ -46,26 +46,29 @@ struct CompanionView: View {
     var body: some View {
         ScrollView {
             VStack {
-                VStack {
+                VStack(alignment: .leading) {
                     SummonerView(viewModel: SummonerViewViewModel(lolManager: viewModel.lolManager))
-                    Divider()
+                    CustomDivider(color: .gold, frame: NSSize(width: 168, height: 2))
+                        .padding(16)
                     Text("Last Games")
+                        .font(Font.system(size: 16))
+                        .fontWeight(.semibold)
+                        .padding(.leading, 16)
                     ForEach(viewModel.lastGames, id: \.id) { game in
-                        HStack {
-                            Text(game.championName)
-                            Text(game.win ? "Won" : "Loose")
-                        }.padding(.horizontal)
+                        MatchView(gameResume: game)
+                        CustomDivider(color: .grey, frame: NSSize(width: 168, height: 1))
+                            .padding(16)
                     }
                 }
                 Button("Force Update User Data") {
                     updateData()
-                }
+                }.padding(.vertical, 16)
             }.padding(.vertical, 10)
         }.task {
             updateData()
         }
         .background(
-            Color(nsColor: NSColor(red: 0.00, green: 0.04, blue: 0.07, alpha: 1.00))
+            LoLCompanionColors.background.swiftUI
         )
     }
 
