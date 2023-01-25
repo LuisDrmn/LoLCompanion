@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0950CA9-270D-46AE-A534-DAAF659B97F5"
+            uuid = "69FF336D-B511-44D4-82EC-38319AC40B6B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LoLCompanion/Processes/ProcessWatcher.swift"
+            filePath = "LoLCompanion/Managers/DDragonManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "isRunning(process:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

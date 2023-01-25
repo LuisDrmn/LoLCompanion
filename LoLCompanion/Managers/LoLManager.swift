@@ -17,7 +17,10 @@ class LoLManager: ObservableObject {
     var matchesInfo: [MatchInfo] = []
     @Published var lastGames: [GameResume] = []
 
-    init() {}
+    @Published var rankedStatus: [RankedStatus] = []
+
+    init() {
+    }
 
     func getData() async {
         guard !matches.isEmpty else { return }
@@ -32,9 +35,5 @@ class LoLManager: ObservableObject {
                 }
             }
         }
-    }
-
-    func getRankedStats() {
-
     }
 }

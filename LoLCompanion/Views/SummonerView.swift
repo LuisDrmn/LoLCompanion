@@ -14,6 +14,7 @@ class SummonerViewViewModel: ObservableObject {
 
     @Published var localSummoner: Summoner?
     @Published var remoteSummoner: Summoner?
+    @Published var rankedStatus: [RankedStatus] = []
 
     init(lolManager: LoLManager) {
         self.lolManager = lolManager
@@ -32,12 +33,21 @@ class SummonerViewViewModel: ObservableObject {
             .sink { remoteSummoner in
                 self.remoteSummoner = remoteSummoner
             }.store(in: &scope)
+
+        lolManager.$rankedStatus
+            .receive(on: RunLoop.main)
+            .sink {
+                self.rankedStatus = $0
+            }.store(in: &scope)
     }
 
     func updateData() {
         Task {
             lolManager.updateLocalSummoner()
             await lolManager.updateRemoteSummoner()
+            if let summonerId = lolManager.remoteSummoner?.id {
+                await lolManager.getRankedStatus(for: summonerId)
+            }
         }
     }
 
@@ -61,7 +71,7 @@ struct SummonerView: View {
                         Circle()
                             .stroke(LoLCompanionColors.gold.swiftUI, lineWidth: 2)
                     )
-                    .padding(.trailing, 16)
+                    .padding(.trailing, 8)
             } placeholder: {
                 ProgressView()
             }
@@ -69,19 +79,21 @@ struct SummonerView: View {
                 Text(viewModel.remoteSummoner?.name ?? "Not Defined")
                     .font(Font.system(size: 16))
                     .fontWeight(.bold)
-                Text("Silver 3")
+                Text(viewModel.rankedStatus.first?.rank ?? "Not Ranked")
                     .font(Font.system(size: 14))
                     .fontWeight(.medium)
-                HStack {
-                    Text("46")
-                        .foregroundColor(LoLCompanionColors.victory.swiftUI)
-                        .font(Font.system(size: 14))
-                        .fontWeight(.medium)
-                    Text("/")
-                    Text("73")
-                        .foregroundColor(LoLCompanionColors.defeat.swiftUI)
-                        .font(Font.system(size: 14))
-                        .fontWeight(.medium)
+                if let rankedStatus = viewModel.rankedStatus.first {
+                    HStack {
+                        Text(String(rankedStatus.wins))
+                            .foregroundColor(LoLCompanionColors.victory.swiftUI)
+                            .font(Font.system(size: 14))
+                            .fontWeight(.medium)
+                        Text("/")
+                        Text(String(rankedStatus.losses))
+                            .foregroundColor(LoLCompanionColors.defeat.swiftUI)
+                            .font(Font.system(size: 14))
+                            .fontWeight(.medium)
+                    }
                 }
             }
             Spacer()

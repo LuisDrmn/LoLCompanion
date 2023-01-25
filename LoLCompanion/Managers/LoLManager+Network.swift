@@ -8,7 +8,16 @@
 import Foundation
 
 extension LoLManager {
-    @MainActor
+    func getRankedStatus(for summonerId: String) async {
+        let result = await riotService.getRankedStatus(for: summonerId)
+        switch result {
+        case .success(let rankedStatus):
+            self.rankedStatus = rankedStatus
+        case .failure(let failure):
+            print(failure.errorDescription)
+        }
+    }
+
     func fetchMatchInfo(_ matchID: String) async -> MatchInfo? {
         let result = await riotService.getMatchInfo(for: matchID)
         switch result {
@@ -16,14 +25,13 @@ extension LoLManager {
             self.matchesInfo.append(matchInfo)
             return matchInfo
         case .failure(let failure):
-            print(failure)
+            print(failure.errorDescription)
             return nil
         }
     }
 
 
     // MARK: - LAST MATCHES
-    @MainActor
     func updateLastMatches() async {
         guard let remoteSummoner = self.remoteSummoner else { return }
         let result = await riotService.getMatches(for: remoteSummoner.puuid)
@@ -31,14 +39,13 @@ extension LoLManager {
         case .success(let matches):
             self.matches = matches
         case .failure(let failure):
-            print(failure)
+            print(failure.errorDescription)
             return
         }
     }
 
 
     // MARK: - REMOTE SUMMONER
-    @MainActor
     func updateRemoteSummoner() async {
         guard let localSummoner = self.localSummoner else { return }
         print("Update Remote")
@@ -51,7 +58,7 @@ extension LoLManager {
         case .success(let summoner):
             return summoner
         case .failure(let failure):
-            print(failure)
+            print(failure.errorDescription)
             return nil
         }
     }

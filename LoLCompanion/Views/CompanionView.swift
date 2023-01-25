@@ -26,8 +26,8 @@ class CompanionViewModel: ObservableObject {
             .throttle(for: 1, scheduler: RunLoop.main, latest: true)
             .debounce(for: 1, scheduler: RunLoop.main)
             .receive(on: RunLoop.main)
-            .sink { gamesResume in
-                self.lastGames = gamesResume
+            .sink {
+                self.lastGames = $0
             }.store(in: &scope)
     }
 
@@ -63,7 +63,7 @@ struct CompanionView: View {
                 Button("Force Update User Data") {
                     updateData()
                 }.padding(.vertical, 16)
-            }.padding(.vertical, 10)
+            }.padding(.vertical, 16)
         }.task {
             updateData()
         }

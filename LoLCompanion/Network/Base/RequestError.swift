@@ -12,22 +12,24 @@ enum RequestError: LocalizedError {
     case invalidURL
     case noResponse
     case unauthorized
-    case unexpectedStatusCode
+    case unexpectedStatusCode(statusCode: String)
     case unknown
     case emptyRequest
 
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .decode:
             return "Unable to decode data"
         case .unauthorized:
             return "Session expired"
+        case .unexpectedStatusCode(let statusCode):
+            return "Unexpected Status Code: \(statusCode)"
         default:
             return "Unknown Error"
         }
     }
 
-    var recoverySuggestion: String? {
+    var recoverySuggestion: String {
         switch self {
         case .decode:
             return "Try again later"

@@ -13,9 +13,14 @@ protocol RiotServiceable {
     func getSummonerName(_ summonerName: String) async -> Result<Summoner, RequestError>
     func getMatches(for summonerPuuid: String) async -> Result<MatchesID, RequestError>
     func getMatchInfo(for matchId: String) async -> Result<MatchInfo, RequestError>
+    func getRankedStatus(for summonerId: String) async -> Result<[RankedStatus], RequestError>
 }
 
 struct RiotService: HTTPClient, RiotServiceable {
+    func getRankedStatus(for summonerId: String) async -> Result<[RankedStatus], RequestError> {
+        await sendRequest(endpoint: RiotEndpoint.getRankedStatus(summonerId: summonerId), responseModel: [RankedStatus].self)
+    }
+
     func getSummonerName(_ summonerName: String) async -> Result<Summoner, RequestError> {
         await sendRequest(endpoint: RiotEndpoint.getSummonerName(summonerName), responseModel: Summoner.self)
     }

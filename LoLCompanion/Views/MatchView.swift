@@ -25,7 +25,7 @@ struct MatchView: View {
                         Circle()
                             .stroke(LoLCompanionColors.gold.swiftUI, lineWidth: 2)
                     )
-                    .padding(.trailing, 16)
+                    .padding(.trailing, 8)
             } placeholder: {
                 ProgressView()
             }

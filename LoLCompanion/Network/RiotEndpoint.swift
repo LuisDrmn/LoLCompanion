@@ -8,23 +8,23 @@
 import Foundation
 
 enum RiotEndpoint {
-    static let API_KEY = "RGAPI-ef0ba744-d5e1-4c0f-a607-1c9155abdf9d"
-
+    static let API_KEY = "RGAPI-e2c8723f-7d25-4a06-9933-100dfef633ee"
+    
     case getSummonerName(_ summonerName: String)
     case getMatches(puuId: String)
     case getMatchInfo(matchId: String)
+    case getRankedStatus(summonerId: String)
 }
 
 extension RiotEndpoint: Endpoint {
     var host: String {
         switch self {
-        case .getSummonerName:
+        case .getSummonerName, .getRankedStatus:
             return "euw1.api.riotgames.com"
         case .getMatches, .getMatchInfo:
             return "europe.api.riotgames.com"
         }
     }
-
     var path: String {
         switch self {
         case .getSummonerName(let summonerName):
@@ -33,6 +33,8 @@ extension RiotEndpoint: Endpoint {
             return "/lol/match/v5/matches/by-puuid/\(puuId)/ids"
         case .getMatchInfo(let matchId):
             return "/lol/match/v5/matches/\(matchId)"
+        case .getRankedStatus(let summonerId):
+            return "/lol/league/v4/entries/by-summoner/\(summonerId)"
         }
     }
 
@@ -49,6 +51,11 @@ extension RiotEndpoint: Endpoint {
     }
 
     var urlQueryItems: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .getMatches:
+            return [URLQueryItem(name: "start", value: "0"), URLQueryItem(name: "count", value: "10")]
+        default:
+            return nil
+        }
     }
 }

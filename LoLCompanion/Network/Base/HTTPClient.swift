@@ -71,7 +71,7 @@ extension HTTPClient {
             case 401:
                 return .failure(.unauthorized)
             default:
-                return .failure(.unexpectedStatusCode)
+                return .failure(.unexpectedStatusCode(statusCode: String(response.statusCode)))
             }
         } catch {
             return .failure(.unknown)
