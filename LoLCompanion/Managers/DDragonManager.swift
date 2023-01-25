@@ -12,19 +12,33 @@ class DDragonManager: ObservableObject {
 
     var dragonService = DDragonService()
     var lastVersion: String?
+    var queues: [Queue]?
 
     init() {
         fetchLastPatchVersion()
+        fetchQueues()
     }
 
-    func fetchLastPatchVersion() {
+    private func fetchLastPatchVersion() {
         Task {
             let result = await dragonService.getLastVersion()
             switch result {
-            case .success(let success):
-                if let first = success.first {
+            case .success(let patchVersions):
+                if let first = patchVersions.first {
                     self.lastVersion = first
                 }
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+
+    private func fetchQueues() {
+        Task {
+            let result = await dragonService.getQueues()
+            switch result {
+            case .success(let queues):
+                self.queues = queues
             case .failure(let failure):
                 print(failure)
             }

@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct LoLCompanionApp: App {
     @StateObject var processWatcher = ProcessWatcher()
-    @StateObject var dDragonmanager = DDragonManager()
+//    @StateObject var dDragonmanager = DDragonManager()
     
     var body: some Scene {
         Settings {

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct GameResume: Identifiable {
-    var id: Int
-    var championName: String
-    var win: Bool
-}
-
 class LoLManager: ObservableObject {
     var riotService = RiotService()
 
@@ -34,9 +28,13 @@ class LoLManager: ObservableObject {
                     guard participant.summonerName == remoteSummoner?.name else {
                         continue
                     }
-                    lastGames.append(GameResume(id: data.info.gameID, championName: participant.championName, win: participant.win))
+                    lastGames.append(GameResume(id: data.info.gameID, championName: participant.championName, win: participant.win, kills: participant.kills, deaths: participant.deaths, assits: participant.assists, queueID: data.info.queueID))
                 }
             }
         }
+    }
+
+    func getRankedStats() {
+
     }
 }

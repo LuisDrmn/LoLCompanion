@@ -44,17 +44,23 @@ class SummonerViewViewModel: ObservableObject {
 }
 
 struct SummonerView: View {
+    @EnvironmentObject var dragonManager: DDragonManager
+
     @ObservedObject var viewModel: SummonerViewViewModel
 
     var body: some View {
         HStack {
-            AsyncImage(url: DDragonManager.shared.getProfileURL(for: viewModel.remoteSummoner?.profileIconID ?? 1,
+            AsyncImage(url: dragonManager.getProfileURL(for: viewModel.remoteSummoner?.profileIconID ?? 1,
                                                                 patchVersions: DDragonManager.shared.lastVersion ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFit()
                     .frame(width: 61, height: 61, alignment: .center)
                     .cornerRadius(100)
+                    .overlay(
+                        Circle()
+                            .stroke(LoLCompanionColors.gold.swiftUI, lineWidth: 2)
+                    )
                     .padding(.trailing, 16)
             } placeholder: {
                 ProgressView()

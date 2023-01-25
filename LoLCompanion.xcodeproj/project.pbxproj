@@ -16,6 +16,8 @@
 		A028077B297C586A000C8A01 /* LoLProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028077A297C586A000C8A01 /* LoLProcesses.swift */; };
 		A028078F297C81AD000C8A01 /* LoLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028078E297C81AD000C8A01 /* LoLManager.swift */; };
 		A0280791297CA61A000C8A01 /* SummonerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0280790297CA61A000C8A01 /* SummonerView.swift */; };
+		A03E58EC2981202D0031021A /* GameResume.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E58EB2981202D0031021A /* GameResume.swift */; };
+		A03E58EE298129900031021A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E58ED298129900031021A /* Queue.swift */; };
 		A0585288297D768B008B9F51 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585287297D768B008B9F51 /* Endpoint.swift */; };
 		A058528A297D76A3008B9F51 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0585289297D76A3008B9F51 /* RequestMethod.swift */; };
 		A058528C297D76B8008B9F51 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A058528B297D76B8008B9F51 /* RequestError.swift */; };
@@ -50,6 +52,8 @@
 		A028077A297C586A000C8A01 /* LoLProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLProcesses.swift; sourceTree = "<group>"; };
 		A028078E297C81AD000C8A01 /* LoLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLManager.swift; sourceTree = "<group>"; };
 		A0280790297CA61A000C8A01 /* SummonerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerView.swift; sourceTree = "<group>"; };
+		A03E58EB2981202D0031021A /* GameResume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResume.swift; sourceTree = "<group>"; };
+		A03E58ED298129900031021A /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		A0585287297D768B008B9F51 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A0585289297D76A3008B9F51 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		A058528B297D76B8008B9F51 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				A028077A297C586A000C8A01 /* LoLProcesses.swift */,
 				A0585292297D783D008B9F51 /* Summoner.swift */,
 				A058529E297DB007008B9F51 /* MatchInfo.swift */,
+				A03E58EB2981202D0031021A /* GameResume.swift */,
+				A03E58ED298129900031021A /* Queue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 				A08C4FE229803D2D0057C79A /* CustomDivider.swift in Sources */,
 				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
 				A0585288297D768B008B9F51 /* Endpoint.swift in Sources */,
+				A03E58EC2981202D0031021A /* GameResume.swift in Sources */,
 				A0280764297C4C1D000C8A01 /* ProcessesView.swift in Sources */,
 				A0585297297DA3F1008B9F51 /* CompanionView.swift in Sources */,
 				A0585295297D78C0008B9F51 /* RiotService.swift in Sources */,
 				A05852A1297DB054008B9F51 /* MatchView.swift in Sources */,
+				A03E58EE298129900031021A /* Queue.swift in Sources */,
 				A08C4FE4298040B00057C79A /* DDragonEndpoint.swift in Sources */,
 				A0280762297C4C1D000C8A01 /* LoLCompanionApp.swift in Sources */,
 				A0280771297C4F1F000C8A01 /* CompanionWindowManager.swift in Sources */,

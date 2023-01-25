@@ -12,12 +12,17 @@ typealias PatchVersions = [String]
 
 protocol DDragonServiceable {
     func getLastVersion() async -> Result<PatchVersions, RequestError>
+    func getQueues() async -> Result<[Queue], RequestError>
     func getChampionImgUrl(for championName: String, with patchVersion: String) -> URL?
     func getProfileIconImgUrl(for profileIcon: Int, with patchVersion: String) -> URL?
 
 }
 
 struct DDragonService: HTTPClient, DDragonServiceable {
+    func getQueues() async -> Result<[Queue], RequestError> {
+        await sendRequest(endpoint: DDragonEndpoint.getQeues, responseModel: [Queue].self)
+    }
+
     func getChampionImgUrl(for championName: String, with patchVersion: String) -> URL? {
         let endpoint = DDragonEndpoint.getChampionImg(championName: championName, patchVersion: patchVersion)
 
