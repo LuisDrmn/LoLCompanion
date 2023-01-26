@@ -2,6 +2,8 @@
 
 A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legends.
 
+![CleanShot 2023-01-26 at 10 47 15](https://user-images.githubusercontent.com/5419579/214805772-fec1fce0-bbf9-44c9-8c5d-6e3829756fc0.png)
+
 ## Features
 - Match history 
 - Rank informations
