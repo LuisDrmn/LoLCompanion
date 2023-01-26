@@ -15,6 +15,7 @@ enum RequestError: LocalizedError {
     case unexpectedStatusCode(statusCode: String)
     case unknown
     case emptyRequest
+    case invalidRegion
 
     var errorDescription: String {
         switch self {

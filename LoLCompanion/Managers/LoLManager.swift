@@ -8,8 +8,9 @@
 import Foundation
 
 class LoLManager: ObservableObject {
-    var riotService = RiotService()
+    var riotService: RiotService = RiotService()
 
+    @Published var riotRegion: RiotRegion?
     @Published var localSummoner: Summoner?
     @Published var remoteSummoner: Summoner?
     
