@@ -77,6 +77,7 @@
 		A08C4FE3298040B00057C79A /* DDragonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonEndpoint.swift; sourceTree = "<group>"; };
 		A08C4FE52980417D0057C79A /* DDragonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonService.swift; sourceTree = "<group>"; };
 		A08C4FE72980443D0057C79A /* DDragonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonManager.swift; sourceTree = "<group>"; };
+		A0C836D129828C7C00602A58 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +123,7 @@
 				A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */,
 				A0280767297C4C1E000C8A01 /* Preview Content */,
 				A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */,
+				A0C836D129828C7C00602A58 /* Config.xcconfig */,
 			);
 			path = LoLCompanion;
 			sourceTree = "<group>";
@@ -335,6 +337,7 @@
 /* Begin XCBuildConfiguration section */
 		A028076B297C4C1E000C8A01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C836D129828C7C00602A58 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -395,6 +398,7 @@
 		};
 		A028076C297C4C1E000C8A01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C836D129828C7C00602A58 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
