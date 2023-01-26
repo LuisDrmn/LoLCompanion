@@ -17,7 +17,6 @@ struct ProcessesView: View {
                 HStack {
                     Text(" - \(process.name)")
                         .foregroundColor(processWatcher.lolProcesses[process] ?? false ? .green : .red)
-//                    Image(systemName: viewModel.processData[process] ?? false ? "checkmark" : "xmark.circle")
                 }
             }
         }

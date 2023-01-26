@@ -44,7 +44,7 @@ struct CompanionView: View {
     @ObservedObject var viewModel: CompanionViewModel = CompanionViewModel()
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 VStack(alignment: .leading) {
                     SummonerView(viewModel: SummonerViewViewModel(lolManager: viewModel.lolManager))
@@ -60,10 +60,12 @@ struct CompanionView: View {
                             .padding(16)
                     }
                 }
-                Button("Force Update User Data") {
+                Button("Force Update Match Data") {
                     updateData()
-                }.padding(.vertical, 16)
-            }.padding(.vertical, 16)
+                }.buttonStyle(LoLButton())
+                .padding(16)
+            }
+            .padding(.vertical, 16)
         }.task {
             updateData()
         }

@@ -39,6 +39,7 @@
 		A08C4FE4298040B00057C79A /* DDragonEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE3298040B00057C79A /* DDragonEndpoint.swift */; };
 		A08C4FE62980417D0057C79A /* DDragonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE52980417D0057C79A /* DDragonService.swift */; };
 		A08C4FE82980443D0057C79A /* DDragonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE72980443D0057C79A /* DDragonManager.swift */; };
+		A0C836D329828D5500602A58 /* LoLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C836D229828D5500602A58 /* LoLButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		A08C4FE52980417D0057C79A /* DDragonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonService.swift; sourceTree = "<group>"; };
 		A08C4FE72980443D0057C79A /* DDragonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonManager.swift; sourceTree = "<group>"; };
 		A0C836D129828C7C00602A58 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A0C836D229828D5500602A58 /* LoLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		A0280760297C4C1D000C8A01 /* LoLCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				A0C836D129828C7C00602A58 /* Config.xcconfig */,
 				A07B5FEB298288290027A6DD /* Info.plist */,
 				A0585286297D7672008B9F51 /* Network */,
 				A0280795297CB8EA000C8A01 /* Model */,
@@ -123,7 +126,6 @@
 				A028076A297C4C1E000C8A01 /* LoLCompanion.entitlements */,
 				A0280767297C4C1E000C8A01 /* Preview Content */,
 				A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */,
-				A0C836D129828C7C00602A58 /* Config.xcconfig */,
 			);
 			path = LoLCompanion;
 			sourceTree = "<group>";
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				A08C4FE129803D2D0057C79A /* CustomDivider.swift */,
+				A0C836D229828D5500602A58 /* LoLButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				A08C4FE229803D2D0057C79A /* CustomDivider.swift in Sources */,
 				A058528E297D76CD008B9F51 /* HTTPClient.swift in Sources */,
 				A0585288297D768B008B9F51 /* Endpoint.swift in Sources */,
+				A0C836D329828D5500602A58 /* LoLButton.swift in Sources */,
 				A03E58EC2981202D0031021A /* GameResume.swift in Sources */,
 				A0280764297C4C1D000C8A01 /* ProcessesView.swift in Sources */,
 				A0585297297DA3F1008B9F51 /* CompanionView.swift in Sources */,
