@@ -7,6 +7,7 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 ## Features
 - Match history 
 - Rank informations
+- All Reggions are supported
 
 ## Upcoming Features
 - In-game statistics and analytics
@@ -21,7 +22,6 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 3. Open the app and sign in with your League of Legends account
 
 ## Usage
-**WARNING: It only supports EUW at the moment.**
 
 The app will automatically detect when the League of Legend client is up and running and display relevant information in the side window. You can also access the app's features through the menu bar icon.
 
