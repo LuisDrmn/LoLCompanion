@@ -7,31 +7,33 @@
 
 import Foundation
 
-enum RiotEndpoint {    
-    case getSummonerName(_ summonerName: String)
-    case getMatches(puuId: String)
-    case getMatchInfo(matchId: String)
-    case getRankedStatus(summonerId: String)
+enum RiotEndpoint {
+    case getSummonerName(_ summonerName: String, _ region: RiotRegion)
+    case getMatches(puuId: String, _ region: RiotRegion)
+    case getMatchInfo(matchId: String, _ region: RiotRegion)
+    case getRankedStatus(summonerId: String, _ region: RiotRegion)
 }
 
 extension RiotEndpoint: Endpoint {
+    
     var host: String {
         switch self {
-        case .getSummonerName, .getRankedStatus:
-            return "euw1.api.riotgames.com"
-        case .getMatches, .getMatchInfo:
-            return "europe.api.riotgames.com"
+        case .getSummonerName(_, let region), .getRankedStatus( _, let region):
+            return region.platformRouting
+        case .getMatches(_, let region), .getMatchInfo(_, let region):
+            return region.regionalRouting
         }
     }
+
     var path: String {
         switch self {
-        case .getSummonerName(let summonerName):
+        case .getSummonerName(let summonerName, _):
             return "/lol/summoner/v4/summoners/by-name/\(summonerName)"
-        case .getMatches(let puuId):
+        case .getMatches(let puuId, _):
             return "/lol/match/v5/matches/by-puuid/\(puuId)/ids"
-        case .getMatchInfo(let matchId):
+        case .getMatchInfo(let matchId, _):
             return "/lol/match/v5/matches/\(matchId)"
-        case .getRankedStatus(let summonerId):
+        case .getRankedStatus(let summonerId, _):
             return "/lol/league/v4/entries/by-summoner/\(summonerId)"
         }
     }

@@ -10,6 +10,8 @@ import Foundation
 typealias MatchesID = [String]
 
 protocol RiotServiceable {
+    var region: RiotRegion? { get set }
+
     func getSummonerName(_ summonerName: String) async -> Result<Summoner, RequestError>
     func getMatches(for summonerPuuid: String) async -> Result<MatchesID, RequestError>
     func getMatchInfo(for matchId: String) async -> Result<MatchInfo, RequestError>
@@ -17,19 +19,30 @@ protocol RiotServiceable {
 }
 
 struct RiotService: HTTPClient, RiotServiceable {
+    var region: RiotRegion?
+
     func getRankedStatus(for summonerId: String) async -> Result<[RankedStatus], RequestError> {
-        await sendRequest(endpoint: RiotEndpoint.getRankedStatus(summonerId: summonerId), responseModel: [RankedStatus].self)
+        guard let region = region else { return .failure(.invalidRegion) }
+
+
+        return await sendRequest(endpoint: RiotEndpoint.getRankedStatus(summonerId: summonerId, region), responseModel: [RankedStatus].self)
     }
 
     func getSummonerName(_ summonerName: String) async -> Result<Summoner, RequestError> {
-        await sendRequest(endpoint: RiotEndpoint.getSummonerName(summonerName), responseModel: Summoner.self)
+        guard let region = region else { return .failure(.invalidRegion) }
+
+        return await sendRequest(endpoint: RiotEndpoint.getSummonerName(summonerName, region), responseModel: Summoner.self)
     }
 
     func getMatches(for summonerPuuid: String) async -> Result<MatchesID, RequestError> {
-        await sendRequest(endpoint: RiotEndpoint.getMatches(puuId: summonerPuuid), responseModel: MatchesID.self)
+        guard let region = region else { return .failure(.invalidRegion) }
+
+        return await sendRequest(endpoint: RiotEndpoint.getMatches(puuId: summonerPuuid, region), responseModel: MatchesID.self)
     }
 
     func getMatchInfo(for matchId: String) async -> Result<MatchInfo, RequestError> {
-        await sendRequest(endpoint: RiotEndpoint.getMatchInfo(matchId: matchId), responseModel: MatchInfo.self)
+        guard let region = region else { return .failure(.invalidRegion) }
+
+        return await sendRequest(endpoint: RiotEndpoint.getMatchInfo(matchId: matchId, region), responseModel: MatchInfo.self)
     }
 }

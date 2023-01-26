@@ -40,6 +40,7 @@
 		A08C4FE62980417D0057C79A /* DDragonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE52980417D0057C79A /* DDragonService.swift */; };
 		A08C4FE82980443D0057C79A /* DDragonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C4FE72980443D0057C79A /* DDragonManager.swift */; };
 		A0C836D329828D5500602A58 /* LoLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C836D229828D5500602A58 /* LoLButton.swift */; };
+		A0C836D52982D17200602A58 /* RiotRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C836D42982D17200602A58 /* RiotRegion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		A08C4FE72980443D0057C79A /* DDragonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonManager.swift; sourceTree = "<group>"; };
 		A0C836D129828C7C00602A58 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A0C836D229828D5500602A58 /* LoLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLButton.swift; sourceTree = "<group>"; };
+		A0C836D42982D17200602A58 /* RiotRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotRegion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				A058528F297D76ED008B9F51 /* Base */,
 				A0585290297D7717008B9F51 /* RiotEndpoint.swift */,
+				A0C836D42982D17200602A58 /* RiotRegion.swift */,
 				A0585294297D78C0008B9F51 /* RiotService.swift */,
 				A08C4FE3298040B00057C79A /* DDragonEndpoint.swift */,
 				A08C4FE52980417D0057C79A /* DDragonService.swift */,
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0585291297D7717008B9F51 /* RiotEndpoint.swift in Sources */,
+				A0C836D52982D17200602A58 /* RiotRegion.swift in Sources */,
 				A0280779297C5462000C8A01 /* ProcessWatcher.swift in Sources */,
 				A0704FA7297F062B00E7B187 /* LoLManager+Local.swift in Sources */,
 				A0704F9D297EAFCF00E7B187 /* URL+LoLCompanion.swift in Sources */,
