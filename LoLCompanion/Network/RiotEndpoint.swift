@@ -41,7 +41,8 @@ extension RiotEndpoint: Endpoint {
     }
 
     var header: [String : String]? {
-        return ["X-Riot-Token": RiotEndpoint.API_KEY]
+        guard let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String else { return nil }
+        return ["X-Riot-Token": apiKey]
     }
 
     var body: [String : String]? {

@@ -71,7 +71,7 @@
 		A0704F9C297EAFCF00E7B187 /* URL+LoLCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LoLCompanion.swift"; sourceTree = "<group>"; };
 		A0704FA6297F062B00E7B187 /* LoLManager+Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Local.swift"; sourceTree = "<group>"; };
 		A0704FA8297F063600E7B187 /* LoLManager+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoLManager+Network.swift"; sourceTree = "<group>"; };
-		A07B5FEA298287470027A6DD /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A07B5FEB298288290027A6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A08C4FDC2980302E0057C79A /* LoLCompanionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLCompanionColors.swift; sourceTree = "<group>"; };
 		A08C4FE129803D2D0057C79A /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		A08C4FE3298040B00057C79A /* DDragonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonEndpoint.swift; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 		A0280755297C4C1D000C8A01 = {
 			isa = PBXGroup;
 			children = (
-				A07B5FEA298287470027A6DD /* Config.xcconfig */,
 				A0280760297C4C1D000C8A01 /* LoLCompanion */,
 				A028075F297C4C1D000C8A01 /* Products */,
 			);
@@ -110,6 +109,7 @@
 		A0280760297C4C1D000C8A01 /* LoLCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				A07B5FEB298288290027A6DD /* Info.plist */,
 				A0585286297D7672008B9F51 /* Network */,
 				A0280795297CB8EA000C8A01 /* Model */,
 				A0280794297CA704000C8A01 /* Processes */,
@@ -460,6 +460,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoLCompanion/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,6 +489,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoLCompanion/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
