@@ -15,9 +15,11 @@ class CustomWindow: NSWindow {
         super.init(contentRect: rect, styleMask: [], backing: .buffered, defer: false)
 
         isReleasedWhenClosed = false
-//        level = .floating
+
         self.hideWindow()
+
         let dragonManager = DDragonManager()
+
         let mainView = CompanionView()
             .environmentObject(dragonManager)
             .frame(width: rect.width, height: rect.height, alignment: .center)

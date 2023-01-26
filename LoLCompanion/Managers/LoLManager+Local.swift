@@ -10,7 +10,7 @@ import Foundation
 extension LoLManager {
     // MARK: - LOCAL SUMMONER
     func updateLocalSummoner() {
-        print("Update Local")
+        print("Update Local Summoner")
         self.localSummoner = findLocalSummoner()
     }
 

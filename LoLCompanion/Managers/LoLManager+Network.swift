@@ -48,7 +48,7 @@ extension LoLManager {
     // MARK: - REMOTE SUMMONER
     func updateRemoteSummoner() async {
         guard let localSummoner = self.localSummoner else { return }
-        print("Update Remote")
+        print("Update Remote Summoner")
         self.remoteSummoner = await findRemoteSummoner(with: localSummoner)
     }
 

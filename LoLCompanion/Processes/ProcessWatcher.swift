@@ -37,7 +37,7 @@ class ProcessWatcher: ObservableObject {
                     }
                 }
 
-                if let leagueClientUx = lolProcesses[LolProcesses.leagueClientUx], leagueClientUx{
+                if let leagueClientUx = lolProcesses[LolProcesses.leagueClientUx], leagueClientUx {
                     if let watchTaskIsCanceled = watchForWindowTask?.isCancelled, watchTaskIsCanceled {
                         watchForWindowTask = nil
                     }
@@ -56,7 +56,7 @@ class ProcessWatcher: ObservableObject {
             } while (!Task.isCancelled)
         }
     }
-
+    
     private func prepareWatchForWindowTask() async {
         guard watchForWindowTask == nil else { return }
 

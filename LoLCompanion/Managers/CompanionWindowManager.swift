@@ -16,13 +16,8 @@ class CompanionWindowManager {
         print("CompanionWindowManager Init")
     }
 
-    deinit {
-        print("CompanionWindowManager DE-INIT")
-    }
-
     func createWindow(with rect: NSRect) {
         guard companionWindow == nil else { return }
-        print("CREATED COMPANION WINDOW")
         self.companionWindow = CustomWindow(with: rect)
     }
 
@@ -36,7 +31,7 @@ class CompanionWindowManager {
 
         if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == LolProcesses.leagueClientUx.bundleIdentifier {
             companionWindow.presentWindow()
-        } else {
+        } else if NSWorkspace.shared.frontmostApplication?.bundleIdentifier != Bundle.main.bundleIdentifier {
             companionWindow.hideWindow()
             return
         }

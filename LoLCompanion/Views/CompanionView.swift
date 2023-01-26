@@ -50,7 +50,7 @@ struct CompanionView: View {
                     SummonerView(viewModel: SummonerViewViewModel(lolManager: viewModel.lolManager))
                     CustomDivider(color: .gold, frame: NSSize(width: 168, height: 2))
                         .padding(16)
-                    Text("Last Games")
+                    Text("Last Games:")
                         .font(Font.system(size: 16))
                         .fontWeight(.semibold)
                         .padding(.leading, 16)
