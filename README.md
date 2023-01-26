@@ -4,6 +4,7 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 
 ## Features
 - Match history 
+- Rank informations
 
 ## Upcoming Features
 - In-game statistics and analytics
