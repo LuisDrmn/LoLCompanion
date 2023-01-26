@@ -1,6 +1,6 @@
 # LoLCompanion for Mac
 
-A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legends.
+A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legends but in Swift and open source.
 
 ![CleanShot 2023-01-26 at 10 47 15](https://user-images.githubusercontent.com/5419579/214805772-fec1fce0-bbf9-44c9-8c5d-6e3829756fc0.png)
 
@@ -12,6 +12,7 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 - In-game statistics and analytics
 - Build recommendations and item sets
 - Replay analysis
+- Support all region
 - And more!
 
 ## Installation
@@ -20,6 +21,8 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 3. Open the app and sign in with your League of Legends account
 
 ## Usage
+**WARNING: It only supports EUW at the moment.**
+
 The app will automatically detect when the League of Legend client is up and running and display relevant information in the side window. You can also access the app's features through the menu bar icon.
 
 ## Contributing
