@@ -17,9 +17,7 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 - And more!
 
 ## Installation
-1. Download the latest release from the [releases page](https://github.com/LuisDrmn/LoLCompanion/releases)
-2. Open the downloaded .dmg file and drag the app to your Applications folder
-3. Open the app and sign in with your League of Legends account
+**INCOMING SOON**
 
 ## Usage
 
