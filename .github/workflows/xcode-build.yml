@@ -15,5 +15,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run Fastlane 
-        uses: fastlane build_archive
+        run: fastlane build_archive
 
