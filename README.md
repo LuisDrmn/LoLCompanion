@@ -13,7 +13,7 @@ A native Mac app that aims to be like Mobalytics or Blitz.gg for League of Legen
 - In-game statistics and analytics
 - Build recommendations and item sets
 - Replay analysis
-- Support all region
+- Support all regions
 - And more!
 
 ## Installation
